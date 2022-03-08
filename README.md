@@ -1,5 +1,10 @@
 ____________________________Ful Customized Point Of Sale System_____________________________
 
+Database: Postgres
+
+1. Devise Gem: (For User Authentication)
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
