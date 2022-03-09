@@ -4,6 +4,7 @@ Database: Postgres
 
 1. Devise Gem: (For User Authentication)
 
+2. Figaro Gem: (To store secret credentials)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
