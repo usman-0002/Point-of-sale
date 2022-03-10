@@ -6,6 +6,8 @@ Database: Postgres
 
 2. Figaro Gem: (To store secret credentials)
 
+3. Bootstrap Gem: (for styling)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

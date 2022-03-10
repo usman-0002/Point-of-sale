@@ -1,0 +1,70 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap";
+
+//  Devise views styling
+.login-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3%;
+  width: 50vw;
+}
+
+.neumorphism {
+  border-radius: 50px;
+  background: #ffffff;
+  box-shadow:  20px 20px 60px #d9d9d9,
+               -20px -20px 60px #ffffff;
+}
+
+.input-style {
+  border-radius: 50px;
+  background: #ffffff;
+  box-shadow: inset 20px 20px 60px #d9d9d9,
+              inset -20px -20px 60px #ffffff;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 12px 0;
+  display: inline-block;
+  box-sizing: border-box;
+  border: none;
+}
+
+.login-button {
+  padding: 14px 20px;
+  margin: 12px 0;
+  border: none;
+  width: 100%;
+}
+
+.login-button:hover {
+  opacity: 1;
+  box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
+              inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.forgot-pass {
+  color: #6a726f;
+  text-decoration: none ;
+}
+
+.forgot-pass:hover {
+  color: #3c3f3e;
+  opacity: 1;
+}
+
