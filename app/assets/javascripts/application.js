@@ -16,3 +16,11 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+
+$(document).ready(function () {
+  $('li a').click(function(e) {
+    e.preventDefault();
+    $('a').removeClass('active');
+    $(this).addClass('active');
+  });
+})

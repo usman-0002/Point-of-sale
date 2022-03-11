@@ -1,2 +1,5 @@
-<h1>Welcome to home page</h1>
-<%= link_to "Logout", destroy_user_session_path, method: :delete  %>
+<%= render partial: 'shared/side_bar' %>
+<%= render partial: 'shared/page_header', locals: {title: "Home"}%>
+<div class="content">
+  <h3>content will be here</h3>
+</div>

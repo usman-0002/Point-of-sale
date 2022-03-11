@@ -68,3 +68,13 @@
   opacity: 1;
 }
 
+// Styling for content rather than side bar
+.content {
+  width: 100%;
+  display: inline-block;
+}
+
+.content *{
+  display: inline-block;
+  margin-left: 280px;
+}
