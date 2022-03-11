@@ -27,6 +27,7 @@ gem 'bootstrap-sass', '3.3.6'
 gem 'devise', '4.8.0'
 gem 'figaro'
 gem 'rails-ujs'
+gem 'toastr_rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

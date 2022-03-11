@@ -16,6 +16,7 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require toastr_rails
 
 $(document).ready(function () {
   $('.nav-link').click(function(e) {

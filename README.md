@@ -8,6 +8,8 @@ Database: Postgres
 
 3. Bootstrap Gem: (for styling)
 
+4. Toast Rails Gem
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
