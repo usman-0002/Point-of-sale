@@ -18,7 +18,7 @@
 //= require bootstrap-sprockets
 
 $(document).ready(function () {
-  $('li a').click(function(e) {
+  $('.nav-link').click(function(e) {
     e.preventDefault();
     $('a').removeClass('active');
     $(this).addClass('active');
