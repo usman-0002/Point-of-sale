@@ -27,16 +27,14 @@
 
 .neumorphism {
   border-radius: 50px;
-  background: #ffffff;
-  box-shadow:  20px 20px 60px #d9d9d9,
-               -20px -20px 60px #ffffff;
+  background: #ecf0f3;
+  box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
 }
 
 .input-style {
+  background: #ecf0f3;
   border-radius: 50px;
-  background: #ffffff;
-  box-shadow: inset 20px 20px 60px #d9d9d9,
-              inset -20px -20px 60px #ffffff;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
   width: 100%;
   padding: 12px 20px;
   margin: 12px 0;
@@ -46,6 +44,11 @@
 }
 
 .login-button {
+  color: white;
+  background-color: black;
+  border-radius: 50px;
+  box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+  transition: 0.5s;
   padding: 14px 20px;
   margin: 12px 0;
   border: none;
@@ -53,9 +56,7 @@
 }
 
 .login-button:hover {
-  opacity: 1;
-  box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
-              inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
 }
 
 .forgot-pass {
