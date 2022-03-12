@@ -1,0 +1,32 @@
+.side-bar {
+  width: 280px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: inline-block
+}
+
+.icon-style {
+  font-size: 1rem;
+  margin: 1rem 0.5rem 1rem 0;
+}
+
+.logo {
+  font-size: 2rem;
+  margin: 1rem 1rem 1rem 0;
+  color: #ff6a00;
+}
+
+.logo + strong {
+  color: #ff6a00;
+}
+
+.side-bar li a:hover {
+  background-color: rgb(93, 94, 95);
+}
+
+.page-header {
+  background-color: #ff6a00c9;
+  color: white;
+  padding: 15px;
+}

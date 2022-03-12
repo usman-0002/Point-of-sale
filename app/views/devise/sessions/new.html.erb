@@ -1,0 +1,21 @@
+<div class= 'login-form neumorphism'>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <h2 class='text-center'>LOGIN</h2>
+    <div>
+      <label>EMAIL</label>
+      <%= f.email_field :email, placeholder: "admin@gmail.com", class: 'input-style'%>
+    </div>
+
+    <div>
+      <label>PASSWORD</label>
+      <%= f.password_field :password, placeholder: "Password", class: 'input-style'%>
+    </div>
+
+    <div class='actions'>
+      <%= f.submit "LOGIN", class: 'login-button'%>
+    </div>
+  <% end %>
+
+  <%= link_to "Forgot your password?", new_password_path(resource_name), class: 'forgot-pass'%>
+</div>
+
