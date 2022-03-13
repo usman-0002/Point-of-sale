@@ -10,7 +10,8 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render partial: 'shared/side_bar' if controller.controller_name == 'home' || controller.controller_name == 'products'%>
+    <div class="content"><%= yield %></div>
     <%= render 'toastr_rails/flash'%>
   </body>
 </html>

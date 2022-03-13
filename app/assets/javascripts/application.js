@@ -18,10 +18,3 @@
 //= require bootstrap-sprockets
 //= require toastr_rails
 
-$(document).ready(function () {
-  $('.nav-link').click(function(e) {
-    e.preventDefault();
-    $('a').removeClass('active');
-    $(this).addClass('active');
-  });
-})

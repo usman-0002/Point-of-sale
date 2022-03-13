@@ -1,0 +1,22 @@
+<%= render partial: 'shared/page_header', locals: {title: 'Products'}%>
+
+<div class='row p-3'>
+  <div class='col'>
+    <h4>Total Products: <%= @products.count%></h4>
+  </div>
+  <div class='col'>
+    Add Product
+  </div>
+</div>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th scope='col'>CODE</th>
+      <th scope='col'>NAME</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: 'shared/product', collection: @products%>
+  </tbody>
+</table>
