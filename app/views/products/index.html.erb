@@ -1,11 +1,11 @@
 <%= render partial: 'shared/page_header', locals: {title: 'Products'}%>
 
-<div class='row p-3'>
-  <div class='col'>
+<div class='d-flex mt-3'>
+  <div class='w-100'>
     <h4>Total Products: <%= @products.count%></h4>
   </div>
-  <div class='col'>
-    Add Product
+  <div class='w-50'>
+    <%= link_to 'Add Product', new_product_path, class: 'btn btn-success'%>
   </div>
 </div>
 

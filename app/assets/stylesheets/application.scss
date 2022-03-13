@@ -17,6 +17,11 @@
  @import "bootstrap";
 
 //  Devise views styling
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .login-form {
   position: fixed;
   top: 50%;
@@ -72,7 +77,6 @@
 
 // Styling for content rather than side bar
 .content {
-  width: 100%;
   margin-left: 280px;
 }
 
