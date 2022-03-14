@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20220312195246) do
   enable_extension "plpgsql"
 
   create_table "products", force: :cascade do |t|
-    t.string   "code",        default: "", null: false
+    t.string   "code",                     null: false
     t.string   "name",        default: "", null: false
     t.text     "description", default: ""
     t.integer  "quantity",    default: 0

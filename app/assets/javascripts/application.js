@@ -18,3 +18,21 @@
 //= require bootstrap-sprockets
 //= require toastr_rails
 
+$(document).on('turbolinks:load', function() {
+  $('.product-body, #cros-expand').click(function(e) {
+    if ($(this).hasClass('product-body')) {
+      $( ".product-expand" ).each(function() {
+        if (!$(this).hasClass('d-none')) {
+          $(this).addClass('d-none');
+          $(this).prev().removeClass('d-none');
+        }
+      });
+      $(this).addClass('d-none');
+      $(this).next().removeClass('d-none');
+    }
+    else {
+      $(this).parent().addClass('d-none');
+      $(this).parent().prev().removeClass('d-none');
+    }
+  });
+})

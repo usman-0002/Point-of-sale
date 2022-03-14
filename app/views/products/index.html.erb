@@ -9,14 +9,16 @@
   </div>
 </div>
 
-<table class='table'>
-  <thead>
-    <tr>
-      <th scope='col'>CODE</th>
-      <th scope='col'>NAME</th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= render partial: 'shared/product', collection: @products%>
-  </tbody>
-</table>
+<div class='d-flex mt-3 product-header'>
+  <div class='w-100'>
+    <strong>CODE</strong>
+  </div>
+  <div class='w-100'>
+    <strong>NAME</strong>
+  </div>
+  <div class='w-100'>
+    <strong>STOCK</strong>
+  </div>
+</div>
+
+<%= render partial: 'shared/product', collection: @products%>

@@ -22,6 +22,7 @@
 
 .side-bar li a:hover {
   background-color: rgb(93, 94, 95);
+  color: white;
 }
 
 .page-header {
@@ -33,4 +34,29 @@
 
 .left-margin {
   margin-left: 1vw;
+}
+
+.product-body {
+  border-bottom: 0.5px solid rgb(156, 151, 151);
+  margin: 0 5px 0 5px;
+}
+
+.product-body > div {
+  padding: 10px;
+}
+
+.product-expand {
+  margin: 0 5px 0 5px;
+}
+
+.product-body:hover {
+  background-color: rgb(224, 220, 220);
+}
+
+#cros-expand > i:hover {
+  background-color: rgb(145, 141, 141);
+  color: white;
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 50%;
 }
