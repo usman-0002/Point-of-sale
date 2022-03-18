@@ -4,8 +4,6 @@ Database: Postgres
 
 1. Devise Gem: (For User Authentication)
 
-2. Figaro Gem: (To store secret credentials)
-
 3. Bootstrap Gem: (for styling)
 
 4. Toast Rails Gem
