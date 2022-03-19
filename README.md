@@ -8,6 +8,8 @@ Database: Postgres
 
 4. Toast Rails Gem
 
+5. Cloudinary Gem added for images uploading
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

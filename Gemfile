@@ -23,6 +23,7 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'bootstrap', '5.1.3'
+gem 'cloudinary'
 gem 'devise', '4.8.0'
 gem 'rails-ujs'
 gem 'toastr_rails'
