@@ -1,13 +1,12 @@
 class ProductsController < ApplicationController
   before_action :find_product, only: %i[update destroy]
   def index
-    if params[:search].present?
-      @products = Product.where('name ILIKE ?', "%#{params[:search]}%")
-      @products += Product.where('description ILIKE ?', "%#{params[:search]}%")
-      @products += Product.where('code ILIKE ?', "%#{params[:search]}%")
+    search_params = params.permit(:search)['search']
+    if search_params.present?
+      @pagy, @products = pagy(Product.filter(search_params))
       flash[:alert] = 'No such product exists!' unless @products.present?
     else
-      @products = Product.order('created_at')
+      @pagy, @products = pagy(Product.all)
     end
   end
 

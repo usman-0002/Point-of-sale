@@ -13,7 +13,7 @@
 
 <div class='d-flex mt-3'>
   <div class='w-100'>
-    <h4>Total Products: <%= @products.count%></h4>
+    <h4>Total Products: <%= @pagy.count%></h4>
   </div>
   <div class='w-50'>
     <%= link_to 'Add Product', new_product_path, class: 'btn btn-success'%>
@@ -36,3 +36,7 @@
 </div>
 
 <%= render partial: 'shared/product', collection: @products%>
+
+<div class='d-flex justify-content-center mt-2'>
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>

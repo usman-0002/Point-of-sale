@@ -10,6 +10,8 @@ Database: Postgres
 
 5. Cloudinary Gem added for images uploading
 
+6. Pagy Gem: for pagination
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
