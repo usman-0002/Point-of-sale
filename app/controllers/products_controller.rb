@@ -1,7 +1,14 @@
 class ProductsController < ApplicationController
   before_action :find_product, only: %i[update destroy]
   def index
-    @products = Product.order('created_at')
+    if params[:search].present?
+      @products = Product.where('name ILIKE ?', "%#{params[:search]}%")
+      @products += Product.where('description ILIKE ?', "%#{params[:search]}%")
+      @products += Product.where('code ILIKE ?', "%#{params[:search]}%")
+      flash[:alert] = 'No such product exists!' unless @products.present?
+    else
+      @products = Product.order('created_at')
+    end
   end
 
   def new
