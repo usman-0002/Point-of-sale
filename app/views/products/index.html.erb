@@ -1,0 +1,42 @@
+<%= render partial: 'shared/page_header', locals: {title: 'Products'}%>
+
+<div class= 'm-4'>
+  <%= form_tag(products_path, method: 'get') do %>
+    <div class = 'search-form'>
+      <%= text_field_tag :search, params[:search], placeholder: 'Search by Code, Name, Description', class: 'search-input', required: true %>
+      <%= button_tag :submit, class: 'search-btn' do %>
+        <i class='bi bi-search'></i>Search
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<div class='d-flex mt-3'>
+  <div class='w-100'>
+    <h4>Total Products: <%= @pagy.count%></h4>
+  </div>
+  <div class='w-50'>
+    <%= link_to 'Add Product', new_product_path, class: 'btn btn-success'%>
+  </div>
+</div>
+
+<div class='d-flex mt-3 product-header'>
+  <div class='w-100'>
+    <strong>CODE</strong>
+  </div>
+  <div class='w-100'>
+    <strong>NAME</strong>
+  </div>
+  <div class='w-100'>
+    <strong>STOCK</strong>
+  </div>
+  <div class='w-100'>
+    <strong>IMAGE</strong>
+  </div>
+</div>
+
+<%= render partial: 'shared/product', collection: @products%>
+
+<div class='d-flex justify-content-center mt-2'>
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>

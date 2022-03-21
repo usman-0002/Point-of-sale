@@ -4,11 +4,13 @@ Database: Postgres
 
 1. Devise Gem: (For User Authentication)
 
-2. Figaro Gem: (To store secret credentials)
-
 3. Bootstrap Gem: (for styling)
 
 4. Toast Rails Gem
+
+5. Cloudinary Gem added for images uploading
+
+6. Pagy Gem: for pagination
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

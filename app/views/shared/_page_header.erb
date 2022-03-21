@@ -1,3 +1,4 @@
-<div class="content page-header">
-  <h3><%= title%></h3>
+<div class='page-header'>
+  <%= link_to '<i class="bi bi-arrow-left h3"></i>'.html_safe, 'javascript:history.back()' unless title == 'Home'%>
+  <span class='h3'><%= title%></span>
 </div>
