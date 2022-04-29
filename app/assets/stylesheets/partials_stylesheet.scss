@@ -1,8 +1,16 @@
+@import "pos_variables";
+
 .side-bar {
   width: 280px;
   position: fixed;
   top: 0;
   bottom: 0;
+
+  .active {
+    color: $primary-dark-color !important;
+    border-left: 5px solid $primary-dark-color !important;
+    background-color: $secondary-dark-color !important;
+  }
 }
 
 .icon-style {
@@ -13,29 +21,28 @@
 .logo {
   font-size: 2rem;
   margin: 1rem 1rem 1rem 0;
-  color: #ff6a00;
+  color: $primary-dark-color;
 }
 
 .logo + strong {
-  color: #ff6a00;
+  color: $primary-dark-color;
 }
 
 .side-bar li a:hover {
-  background-color: rgb(93, 94, 95);
-  color: white;
+  background-color: $primary-light-color;
 }
 
 .page-header {
-  background-color: #ff6a00ea;
+  background-color: $primary-light-color;
   width: 100%;
-  color: white;
   padding: 15px;
-}
 
-.page-header > a {
-  padding-left: 0.5vw; 
-  padding-right: 1.5vw;
-  color: white;
+  a {
+    padding-left: 0.5vw; 
+    padding-right: 1.5vw;
+    color: black;
+    -webkit-text-stroke-width: medium;
+  }
 }
 
 .left-margin {
@@ -56,15 +63,15 @@
 }
 
 .product-body:hover {
-  background-color: rgb(224, 220, 220);
+  background-color: $primary-light-color;
 }
 
 #cros-expand > i:hover {
-  background-color: rgb(145, 141, 141);
+  background-color: rgb(189, 184, 184);
   color: white;
   padding-left: 3px;
   padding-right: 3px;
-  border-radius: 50%;
+  border-radius: 5px;
 }
 
 .product-img {
