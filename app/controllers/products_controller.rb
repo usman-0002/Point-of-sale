@@ -45,6 +45,14 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
+  def search
+    search_params = params.permit(:search)['search']
+    @pagy, @products = pagy(Product.filter(search_params))
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
   def find_product
