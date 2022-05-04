@@ -1,13 +1,7 @@
 class ProductsController < ApplicationController
   before_action :find_product, only: %i[update destroy]
   def index
-    search_params = params.permit(:search)['search']
-    if search_params.present?
-      @pagy, @products = pagy(Product.filter(search_params))
-      flash[:alert] = 'No such product exists!' unless @products.present?
-    else
-      @pagy, @products = pagy(Product.all)
-    end
+    @pagy, @products = pagy(Product.all)
   end
 
   def new
@@ -46,7 +40,7 @@ class ProductsController < ApplicationController
   end
 
   def search
-    search_params = params.permit(:search)['search']
+    search_params = params.permit(:search)['search'].strip
     @pagy, @products = pagy(Product.filter(search_params))
     respond_to do |format|
       format.js
