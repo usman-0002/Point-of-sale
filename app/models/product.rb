@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  belongs_to :category, optional: true
+  belongs_to :category
   has_one_attached :avatar, dependent: :destroy
 
   validates :code, :name, presence: true

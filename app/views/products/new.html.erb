@@ -1,6 +1,6 @@
 <%= render partial: 'shared/page_header', locals: {title: 'Add Products'}%>
 
-<div class= "p-5">
+<div class= "p-5 new-product-form">
   <%= form_for(@product, url: {action: :create }) do |f| %>
     <div class='d-flex mt-2'>
       <div class='w-100 mb-3'>
@@ -9,13 +9,17 @@
       </div>
       <div class='w-100 mb-3 left-margin'>
         <label for='name'>Product name</label>
-      <%= f.text_field :name, placeholder: 'Enter Product Name', class: 'form-control', required: true %>
+        <%= f.text_field :name, placeholder: 'Enter Product Name', class: 'form-control', required: true %>
       </div>
     </div>
     <div class='d-flex'>
       <div class='w-100 mb-3'>
         <%= f.label :description %>
         <%= f.text_field :description, placeholder: 'Enter Product Details', class: 'form-control' %>
+      </div>
+      <div class='w-100 mb-3 left-margin product-category-select'>
+        <%= f.label :category %>
+        <%= f.collection_select :category_id, @categories, :id, :name%>
       </div>
     </div>
     <div class='d-flex mt-2'>

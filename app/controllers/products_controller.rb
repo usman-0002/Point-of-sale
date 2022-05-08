@@ -2,10 +2,12 @@ class ProductsController < ApplicationController
   before_action :find_product, only: %i[update destroy]
   def index
     @pagy, @products = pagy(Product.all)
+    @categories = Category.all
   end
 
   def new
     @product = Product.new
+    @categories = Category.all
   end
 
   def create

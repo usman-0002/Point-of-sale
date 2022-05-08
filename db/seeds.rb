@@ -6,6 +6,7 @@ User.create(email: id, password: pass)
 # Categories
 Category.create(name: 'General Store Item')
 Category.create(name: 'Keryana Store Item')
+Category.create(name: 'Others')
 
 # Products
 Product.create(name: 'Treat', code: 'TR234', category_id: 1)
