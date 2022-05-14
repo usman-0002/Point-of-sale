@@ -1,0 +1,5 @@
+$("#new-category-modal-window").find(".modal-content").html("<%= escape_javascript(render partial: 'shared/new_category' )%>");
+$("#new-category-modal-window").modal('show');
+$(".close").click(function(){
+  $("#new-category-modal-window").modal('hide');
+});

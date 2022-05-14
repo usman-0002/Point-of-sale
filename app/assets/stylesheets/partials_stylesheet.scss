@@ -67,11 +67,20 @@
       background-position: right 0.75rem center;
       background-size: 16px 12px;
       border: 1px solid #ced4da;
-      border-radius: 0.25rem;
+      border-radius: 0.25rem 0 0 0.25rem;
       transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
+    }
+
+    .new-category {
+      text-decoration: none;
+      -webkit-text-stroke-width: thick;
+      color: black;
+      background: darkgray;
+      padding: 5px 10px;
+      border-radius: 0 5px 5px 0;
     }
 
     select:focus {

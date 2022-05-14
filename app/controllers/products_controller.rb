@@ -49,6 +49,17 @@ class ProductsController < ApplicationController
     end
   end
 
+  def create_new_category
+    category_params = params.require(:category).permit(:name)
+    @category = Category.new(category_params)
+    if @category.save
+      flash[:notice] = 'Category added Successfully!'
+    else
+      flash[:alert] = 'Unable to create Category!'
+    end
+    redirect_to new_product_path
+  end
+
   private
 
   def find_product
