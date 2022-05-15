@@ -1,8 +1,10 @@
 <div class='d-flex product-body'>
-  <div class='w-100'><strong><%= product.code %></strong></div>
-  <div class='w-100'><%= product.name %></div>
-  <div class='w-100'><%= product.quantity %></div>
-  <div class='w-100'><%= product.category.name %></div>
+  <div class='w-100'>
+    <strong><%= product.name.camelize %></strong>
+    <div>SKU: <%= product.code %></div>
+  </div>
+  <div class='w-100'><%= product.category.name.camelize %></div>
+  <div class='w-100'><%= stock_status(product.quantity) %></div>
   <div class='w-100'>
     <% if product.avatar.attached?%>
       <%= image_tag product.avatar, class: 'product-img'%>
@@ -10,7 +12,7 @@
   </div>
 </div>
 
-<div class='product-expand d-none border border-2 rounded border-success p-3 new-product-form'>
+<div class='product-expand d-none new-product-form'>
   <div class='d-flex justify-content-end' id='cros-expand'>
     <i class="bi bi-x-lg"></i>
   </div>
