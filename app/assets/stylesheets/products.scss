@@ -1,19 +1,9 @@
 @import "pos_variables";
-.product-header {
-  border-bottom: 1px solid black;
-  margin-right: 5px;
-  margin-left: 5px;
-}
-
-.product-header > div {
-  padding: 10px;
-}
-
 .search-form {
   display: inline-flex;
   width: 100% !important;
   .search-input {
-    border: 2px solid black;
+    border: 1px solid $primary-dark-color;
     padding: 1vh 3vw;
     width: 100%;
   }
@@ -24,4 +14,8 @@
   i {
     margin-right: 7px;
   }
+}
+
+.products-listing {
+  padding: 0 30px;
 }

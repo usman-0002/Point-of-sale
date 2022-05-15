@@ -9,10 +9,13 @@ Rails.application.routes.draw do
     root 'devise/sessions#new'
   end
 
-  resources :products do
+  resources :categories
+
+  resources :products, except: :edit do
     collection do
       post :search
     end
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  post '/new-category', action: :create_new_category, controller: 'products', as: 'new_product_category'
 end

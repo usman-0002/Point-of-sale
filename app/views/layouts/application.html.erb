@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <%= render partial: 'shared/side_bar' if controller.controller_name == 'home' || controller.controller_name == 'products'%>
+    <%= render partial: 'shared/side_bar' if display_sidebar(controller.controller_name)%>
     <div class="content"><%= yield %></div>
     <div id='flash-toast'>
       <%= render 'toastr_rails/flash'%>

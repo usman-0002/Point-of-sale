@@ -1,0 +1,11 @@
+.categories-list {
+  padding: 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .category {
+    margin: 5px;
+    width: 12vw;
+  }
+}
