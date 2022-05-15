@@ -3,7 +3,7 @@
     <strong><%= product.name.camelize %></strong>
     <div>SKU: <%= product.code %></div>
   </div>
-  <div class='w-100'><%= product.category.name.camelize %></div>
+  <div class='w-100'><%= product.category&.name&.camelize || 'Others'%></div>
   <div class='w-100'><%= stock_status(product.quantity) %></div>
   <div class='w-100'>
     <% if product.avatar.attached?%>

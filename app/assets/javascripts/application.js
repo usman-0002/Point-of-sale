@@ -20,6 +20,27 @@
 //= require toastr_rails
 
 $(document).on('turbolinks:load', function() {
+  sidebar_submenu_onclick();
+  products_listing_onclick();
+})
+
+const sidebar_submenu_onclick = () => { 
+  var dropdown = document.getElementsByClassName('sidebar-submenu');
+  var i;
+
+  for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+      var dropdownContent = this.nextElementSibling;
+      if (dropdownContent.style.display === "block") {
+        dropdownContent.style.display = "none";
+      } else {
+        dropdownContent.style.display = "block";
+      }
+    });
+  }
+};
+
+const products_listing_onclick = () => {
   $('.product-body, #cros-expand').click(function(e) {
     if ($(this).hasClass('product-body')) {
       $( ".product-expand" ).each(function() {
@@ -36,4 +57,4 @@ $(document).on('turbolinks:load', function() {
       $(this).parent().prev().removeClass('d-none');
     }
   });
-})
+}

@@ -9,10 +9,8 @@
   box-shadow: 0 0 5px 0 rgb(133, 132, 132);
 
   .active {
-    color: $primary-dark-color !important;
-    border-left: 5px solid $primary-dark-color !important;
-    background: #ffffff !important;
-    border-radius: 0% !important;
+    color: white !important;
+    background: $primary-dark-color !important;
   }
 }
 
@@ -30,6 +28,25 @@
   
   strong {
     color: $primary-dark-color;
+  }
+}
+
+.sidebar-submenu {
+  .bi-caret-down-fill {
+    font-size: 1rem;
+    padding-left: 100px;
+  }
+}
+
+div[is_product_controller = false] {
+  display: none;
+}
+
+.sidebar-submenu-container {
+  background: #ced4da;
+
+  a:hover {
+    background-color: #babab8 !important;
   }
 }
 
@@ -123,6 +140,7 @@
   background: white;
   border-radius: 5px;
   margin-bottom: 7px;
+  box-shadow: 0 0 2px 0 #858484;
 }
 
 .product-body > div {
