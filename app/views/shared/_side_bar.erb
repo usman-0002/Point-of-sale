@@ -25,16 +25,21 @@
           <i class="bi bi-basket2-fill icon-style"></i>Products
           <i class="bi bi-caret-down-fill"></i>
         </a>
-        <div class="sidebar-submenu-container" is_product_controller = "<%= hide_products_submenu(controller.controller_name) %>">
-          <%= link_to '<i class="bi bi-list-stars icon-style"></i>Products List'.html_safe, products_path, class: "nav-link link-dark #{'active' if controller.controller_name == 'products'}" %>
-          <%= link_to '<i class="bi bi-grid icon-style"></i>Categories'.html_safe, categories_path, class: "nav-link link-dark #{'active' if controller.controller_name == 'categories'}" %>
+        <div class="sidebar-submenu-container" display_products_submenu = "<%= hide_products_submenu(controller.controller_name) %>">
+          <%= link_to 'Products List', products_path, class: "nav-link link-dark #{'active' if controller.controller_name == 'products'}" %>
+          <%= link_to 'Categories', categories_path, class: "nav-link link-dark #{'active' if controller.controller_name == 'categories'}" %>
         </div>
       </li>
       <li>
-        <a href="#" class="nav-link link-dark">
-          <i class="bi bi-people-fill icon-style"></i>
-          Customers
+        <a type="button" class="sidebar-submenu nav-link link-dark">
+          <i class="bi bi-people-fill icon-style"></i>Parties
+          <i class="bi bi-caret-down-fill"></i>
         </a>
+        <div class="sidebar-submenu-container" display_parties_submenu = "false">
+          <%= link_to 'Customers', products_path, class: "nav-link link-dark #{'active' if controller.controller_name == 'products'}" %>
+          <%= link_to 'Suppliers', categories_path, class: "nav-link link-dark #{'active' if controller.controller_name == 'categories'}" %>
+          <%= link_to 'Employees', categories_path, class: "nav-link link-dark #{'active' if controller.controller_name == 'categories'}" %>
+        </div>
       </li>
       <li>
         <a href="#" class="nav-link link-dark">
