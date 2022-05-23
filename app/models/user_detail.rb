@@ -7,7 +7,7 @@ class UserDetail < ApplicationRecord
   def full_name
     first_name + ' ' + last_name
   end
-  
+
   def avatar_url
     avatar.attached? ? avatar : 'parties_default_img.jpg'
   end

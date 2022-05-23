@@ -1,5 +1,5 @@
-<%= form_for(@employee, url: {action: action }) do |f| %>
-  <%= f.fields_for @employee_detail do |s| %>
+<%= form_for(@supplier, url: {action: action }) do |f| %>
+  <%= f.fields_for @supplier_detail do |s| %>
     <div class='d-flex mt-2'>
       <div class='w-100 mb-3'>
         <%= s.label :first_name%>
@@ -39,17 +39,17 @@
   <% end %>
   <div class='d-flex mt-2'>
     <div class='w-100 mb-3'>
-      <%= f.label :job_title%>
-      <%= f.text_field :job_title, placeholder: 'Cashier, e.g', class: 'form-control', required: true %>
+      <%= f.label :company_name%>
+      <%= f.text_field :company_name, placeholder: 'Al-Rehman & Co , e.g', class: 'form-control', required: true %>
     </div>
     <div class='w-100 mb-3 left-margin'>
-      <%= f.label :joined_at%>
-      <%= f.date_field :joined_at, class: 'form-control'%>
+      <%= f.label :office_number%>
+      <%= f.text_field :office_number, placeholder: '0300-0000000', class: 'form-control'%>
     </div>
   </div>
   <div class='d-flex'>
     <div class='w-100 text-center'>
-      <%= f.submit "#{form_submit_btn_text(action)} Employee", class: 'btn btn-success' %>
+      <%= f.submit "#{form_submit_btn_text(action)} Supplier", class: 'btn btn-success' %>
     </div>
   </div>
 <% end %>
