@@ -23,5 +23,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :employees do
+    collection do
+      post :search
+    end
+  end
+
   post '/new-category', action: :create_new_category, controller: 'products', as: 'new_product_category'
 end

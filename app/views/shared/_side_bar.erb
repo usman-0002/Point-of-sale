@@ -38,7 +38,7 @@
         <div class="sidebar-submenu-container" display_parties_submenu = "<%= hide_parties_submenu(controller.controller_name) %>">
           <%= link_to 'Customers', customers_path, class: "nav-link link-dark #{'active' if controller.controller_name == 'customers'}" %>
           <%= link_to 'Suppliers', categories_path, class: "nav-link link-dark #{'active' if controller.controller_name == 'categories'}" %>
-          <%= link_to 'Employees', categories_path, class: "nav-link link-dark #{'active' if controller.controller_name == 'categories'}" %>
+          <%= link_to 'Employees', employees_path, class: "nav-link link-dark #{'active' if controller.controller_name == 'employees'}" %>
         </div>
       </li>
       <li>
