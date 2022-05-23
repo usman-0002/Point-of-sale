@@ -3,7 +3,7 @@
     <h4>Total Products: <%= @pagy.count%></h4>
   </div>
   <div class='w-50'>
-    <%= link_to 'Add Product', new_product_path, class: 'btn btn-success'%>
+    <%= link_to '<i class="bi bi-plus-lg"></i> Add Product'.html_safe, new_product_path, class: 'btn btn-success'%>
   </div>
 </div>
 

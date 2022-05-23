@@ -1,0 +1,13 @@
+<%= render partial: 'shared/page_header', locals: {title: 'Customers'}%>
+
+<div class= 'm-4'>
+  <%= form_with url: search_customers_path,local: false,  method: :post do |form|%>
+    <div class = 'search-form'>
+      <%= form.search_field :search, placeholder: 'Search by Name', class: 'search-input', oninput: "this.form.requestSubmit()" %>
+    </div>
+  <% end %>
+</div>
+
+<div id="customers-listing" class='customers-listing'>
+  <%= render partial: 'shared/customer/customers_listing' %>
+</div>

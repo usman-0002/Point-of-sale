@@ -1,0 +1,29 @@
+.customers-listing {
+  margin: 2rem;
+
+  .customer-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .customer {
+      margin: 5px;
+      text-align: center;
+      width: 15vw;
+    }
+  }
+}
+
+.customer-details {
+  margin: auto;
+  margin-top: 2rem;
+  max-width: 20vw;
+
+  .bold-text {
+    font-weight: bold;
+  }
+
+  .card-footer {
+    text-align: center;
+  }
+}
