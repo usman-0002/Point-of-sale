@@ -1,0 +1,7 @@
+<%= render partial: 'shared/page_header', locals: {title: 'Customers'}%>
+
+<%= render partial: 'shared/parties_search_form', locals: {url: '/customers/search'}%>
+
+<div id="customers-listing" class='customers-listing'>
+  <%= render partial: 'shared/customer/customers_listing' %>
+</div>

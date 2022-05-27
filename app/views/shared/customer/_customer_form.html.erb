@@ -1,0 +1,45 @@
+<%= form_for(@customer, url: {action: action }) do |f| %>
+  <%= f.fields_for @customer_detail do |s| %>
+    <div class='d-flex mt-2'>
+      <div class='w-100 mb-3'>
+        <%= s.label :first_name%>
+        <%= s.text_field :first_name, autofocus: true, placeholder: 'Muhammad, e.g', class: 'form-control', required: true %>
+      </div>
+      <div class='w-100 mb-3 left-margin'>
+        <%= s.label :last_name%>
+        <%= s.text_field :last_name, placeholder: 'Usman, e.g', class: 'form-control', required: true %>
+      </div>
+    </div>
+    <div class='d-flex mt-2'>
+      <div class='w-100 mb-3'>
+        <%= s.label :email%>
+        <%= s.text_field :email, placeholder: 'muhammadusman@gmail.com', class: 'form-control'%>
+      </div>
+      <div class='w-100 mb-3 left-margin'>
+        <%= s.label :mobile_number%>
+        <%= s.text_field :mobile_number, placeholder: '0306-1656352', class: 'form-control' %>
+      </div>
+    </div>
+    <div class='d-flex mt-2'>
+      <div class='w-100 mb-3'>
+        <%= s.label :address%>
+        <%= s.text_field :address, class: 'form-control' %>
+      </div>
+    </div>
+    <div class='d-flex mt-2'>
+      <div class='w-100 mb-3'>
+        <%= s.label :city%>
+        <%= s.text_field :city, placeholder: 'Multan', class: 'form-control'%>
+      </div>
+      <div class='w-100 mb-3 left-margin'>
+        <%= s.label :avatar %>
+        <%= s.file_field :avatar,  class: 'form-control', direct_upload: true, accept: "image/*" %>
+      </div>
+    </div>
+  <% end %>
+  <div class='d-flex'>
+    <div class='w-100 text-center'>
+      <%= f.submit "#{form_submit_btn_text(action)} Customer", class: 'btn btn-success' %>
+    </div>
+  </div>
+<% end %>

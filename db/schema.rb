@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_08_032910) do
+ActiveRecord::Schema.define(version: 2022_05_27_013812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,18 @@ ActiveRecord::Schema.define(version: 2022_05_08_032910) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "customers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.string "job_title", default: ""
+    t.date "joined_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "products", id: :serial, force: :cascade do |t|
     t.string "code", null: false
     t.string "name", default: "", null: false
@@ -50,7 +62,30 @@ ActiveRecord::Schema.define(version: 2022_05_08_032910) do
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "supplier_id"
     t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["supplier_id"], name: "index_products_on_supplier_id"
+  end
+
+  create_table "suppliers", force: :cascade do |t|
+    t.string "company_name", default: ""
+    t.string "office_number", default: ""
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_details", force: :cascade do |t|
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
+    t.string "email", default: ""
+    t.string "mobile_number", default: ""
+    t.string "address", default: ""
+    t.string "city", default: ""
+    t.string "detailable_type"
+    t.bigint "detailable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["detailable_type", "detailable_id"], name: "index_user_details_on_detailable_type_and_detailable_id"
   end
 
   create_table "users", id: :serial, force: :cascade do |t|
@@ -66,4 +101,5 @@ ActiveRecord::Schema.define(version: 2022_05_08_032910) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "products", "suppliers"
 end

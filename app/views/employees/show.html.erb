@@ -1,0 +1,20 @@
+<%= render partial: 'shared/page_header', locals: {title: 'Employee Details'}%>
+
+<div class="card customer-details">
+  <div class="card-header">
+    <p class='text-center bold-text'>Employee ID: <%= @employee.id%></p>
+  </div>
+  <%= image_tag @employee.employee_detail.avatar_url, class: "card-img-top"%>
+  <div class="card-body">
+    <h5 class="card-title text-center"><%= @employee.employee_detail.full_name%></h5>
+    <p><span class='bold-text'>EMAIL: </span><%= @employee.employee_detail.email%></p>
+    <p><span class='bold-text'>MOBILE NUMBER: </span><%= @employee.employee_detail.mobile_number%></p>
+    <p><span class='bold-text'>JOINING DATE: </span><%= @employee.joined_at%></p>
+    <p><span class='bold-text'>CITY: </span><%= @employee.employee_detail.city%></p>
+    <p><span class='bold-text'>ADDRESS: </span><%= @employee.employee_detail.address%></p>
+  </div>
+  <div class='card-footer'>
+    <%= link_to '<i class="bi bi-pencil-square"></i> Edit'.html_safe, edit_employee_path(@employee), class: 'btn m-1 btn-info'%>
+    <%= link_to '<i class="bi bi-trash3"></i> Delete'.html_safe, employee_path(@employee), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn m-1 btn-danger'%>
+  </div>
+</div>

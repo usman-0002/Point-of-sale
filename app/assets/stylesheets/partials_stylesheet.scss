@@ -9,8 +9,17 @@
   box-shadow: 0 0 5px 0 rgb(133, 132, 132);
 
   .active {
-    color: white !important;
-    background: $primary-dark-color !important;
+    color: $primary-dark-color !important;
+    background: white !important;
+    font-weight: bolder;
+  }
+}
+
+li {
+  a:hover {
+    color: $primary-dark-color !important;
+    background: white !important;
+    font-weight: bolder;
   }
 }
 
@@ -34,19 +43,21 @@
 .sidebar-submenu {
   .bi-caret-down-fill {
     font-size: 1rem;
-    padding-left: 100px;
+    float: right;
   }
 }
 
-div[is_product_controller = false] {
+div[display_items_submenu = false] {
+  display: none;
+}
+
+div[display_parties_submenu = false] {
   display: none;
 }
 
 .sidebar-submenu-container {
-  background: #ced4da;
-
-  a:hover {
-    background-color: #babab8 !important;
+  a {
+    margin-left: 2rem;
   }
 }
 

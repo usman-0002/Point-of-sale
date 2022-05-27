@@ -1,0 +1,21 @@
+<%= render partial: 'shared/page_header', locals: {title: 'Supplier Details'}%>
+
+<div class="card customer-details">
+  <div class="card-header">
+    <p class='text-center bold-text'>Company Name: <%= @supplier.company_name%></p>
+  </div>
+  <%= image_tag @supplier.supplier_detail.avatar_url, class: "card-img-top"%>
+  <div class="card-body">
+    <h5 class="card-title text-center"><%= @supplier.supplier_detail.full_name%></h5>
+    <p><span class='bold-text'>Total Products: </span><%= @supplier.products.count%></p>
+    <p><span class='bold-text'>EMAIL: </span><%= @supplier.supplier_detail.email%></p>
+    <p><span class='bold-text'>MOBILE NUMBER: </span><%= @supplier.supplier_detail.mobile_number%></p>
+    <p><span class='bold-text'>OFFICE NUMBER: </span><%= @supplier.office_number%></p>
+    <p><span class='bold-text'>CITY: </span><%= @supplier.supplier_detail.city%></p>
+    <p><span class='bold-text'>ADDRESS: </span><%= @supplier.supplier_detail.address%></p>
+  </div>
+  <div class='card-footer'>
+    <%= link_to '<i class="bi bi-pencil-square"></i> Edit'.html_safe, edit_supplier_path(@supplier), class: 'btn m-1 btn-info'%>
+    <%= link_to '<i class="bi bi-trash3"></i> Delete'.html_safe, supplier_path(@supplier), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn m-1 btn-danger'%>
+  </div>
+</div>

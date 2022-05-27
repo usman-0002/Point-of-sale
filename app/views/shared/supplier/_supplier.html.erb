@@ -1,0 +1,9 @@
+<div class="card customer">
+  <%= image_tag supplier.supplier_detail.avatar_url, class: "card-img-top"%>
+  <div class="card-body">
+    <h5 class="card-title"><%= supplier.company_name%></h5>
+  </div>
+  <div class='card-footer'>
+    <%= link_to '<i class="bi bi-ticket-detailed"></i> Show'.html_safe, supplier_path(supplier), class: 'btn m-1 btn-info'%>
+  </div>
+</div>
