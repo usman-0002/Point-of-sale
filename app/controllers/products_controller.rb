@@ -44,6 +44,7 @@ class ProductsController < ApplicationController
     search_params = params.permit(:search)['search'].strip
     @pagy, @products = pagy(Product.filter(search_params))
     @categories = Category.all
+    @suppliers = Supplier.all
     respond_to_js
   end
 
