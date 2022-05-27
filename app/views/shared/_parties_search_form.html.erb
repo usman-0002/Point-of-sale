@@ -1,0 +1,7 @@
+<div class= 'm-4'>
+  <%= form_with url: url, local: false,  method: :post do |form|%>
+    <div class = 'search-form'>
+      <%= form.search_field :search, placeholder: 'Search by Name', class: 'search-input', oninput: "this.form.requestSubmit()" %>
+    </div>
+  <% end %>
+</div>

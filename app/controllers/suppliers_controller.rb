@@ -17,6 +17,7 @@ class SuppliersController < ApplicationController
       if @supplier_detail.save
         redirect_to suppliers_path, notice: 'Supplier added Successfully!'
       else
+        @supplier.delete
         flash.now[:alert] = @supplier_detail.errors.full_messages
         render :new
       end

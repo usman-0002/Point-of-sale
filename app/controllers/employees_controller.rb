@@ -17,6 +17,7 @@ class EmployeesController < ApplicationController
       if @employee_detail.save
         redirect_to employees_path, notice: 'Employee added Successfully!'
       else
+        @employee.delete
         flash.now[:alert] = @employee_detail.errors.full_messages
         render :new
       end

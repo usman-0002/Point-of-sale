@@ -17,6 +17,7 @@ class CustomersController < ApplicationController
       if @customer_detail.save
         redirect_to customers_path, notice: 'Customer added Successfully!'
       else
+        @customer.delete
         flash.now[:alert] = @customer_detail.errors.full_messages
         render :new
       end

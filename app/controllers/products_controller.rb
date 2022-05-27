@@ -3,11 +3,13 @@ class ProductsController < ApplicationController
   def index
     @pagy, @products = pagy(Product.includes(:category))
     @categories = Category.all
+    @suppliers = Supplier.all
   end
 
   def new
     @product = Product.new
     @categories = Category.all
+    @suppliers = Supplier.all
   end
 
   def create

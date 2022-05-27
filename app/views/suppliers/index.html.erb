@@ -1,12 +1,6 @@
 <%= render partial: 'shared/page_header', locals: {title: 'Suppliers'}%>
 
-<div class= 'm-4'>
-  <%= form_with url: search_suppliers_path,local: false,  method: :post do |form|%>
-    <div class = 'search-form'>
-      <%= form.search_field :search, placeholder: 'Search by Name', class: 'search-input', oninput: "this.form.requestSubmit()" %>
-    </div>
-  <% end %>
-</div>
+<%= render partial: 'shared/parties_search_form', locals: {url: '/suppliers/search'}%>
 
 <div id="suppliers-listing" class='customers-listing'>
   <%= render partial: 'shared/supplier/suppliers_listing' %>

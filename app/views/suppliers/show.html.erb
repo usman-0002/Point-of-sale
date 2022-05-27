@@ -7,6 +7,7 @@
   <%= image_tag @supplier.supplier_detail.avatar_url, class: "card-img-top"%>
   <div class="card-body">
     <h5 class="card-title text-center"><%= @supplier.supplier_detail.full_name%></h5>
+    <p><span class='bold-text'>Total Products: </span><%= @supplier.products.count%></p>
     <p><span class='bold-text'>EMAIL: </span><%= @supplier.supplier_detail.email%></p>
     <p><span class='bold-text'>MOBILE NUMBER: </span><%= @supplier.supplier_detail.mobile_number%></p>
     <p><span class='bold-text'>OFFICE NUMBER: </span><%= @supplier.office_number%></p>

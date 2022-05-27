@@ -1,12 +1,6 @@
 <%= render partial: 'shared/page_header', locals: {title: 'Employees'}%>
 
-<div class= 'm-4'>
-  <%= form_with url: search_employees_path,local: false,  method: :post do |form|%>
-    <div class = 'search-form'>
-      <%= form.search_field :search, placeholder: 'Search by Name', class: 'search-input', oninput: "this.form.requestSubmit()" %>
-    </div>
-  <% end %>
-</div>
+<%= render partial: 'shared/parties_search_form', locals: {url: '/employees/search'}%>
 
 <div id="employees-listing" class='customers-listing'>
   <%= render partial: 'shared/employee/employees_listing' %>
