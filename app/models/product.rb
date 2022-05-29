@@ -2,6 +2,7 @@ class Product < ApplicationRecord
   belongs_to :category
   belongs_to :supplier
   has_one_attached :avatar, dependent: :destroy
+  has_many :product_sales_units, dependent: :destroy
 
   validates :code, :name, presence: true
   validates :code, uniqueness: true
@@ -14,5 +15,9 @@ class Product < ApplicationRecord
 
   def self.filter(params)
     code_filter(params).or(name_filter(params)).or(des_filter(params))
+  end
+
+  def avatar_url
+    avatar.attached? ? avatar : 'product.jpg'
   end
 end

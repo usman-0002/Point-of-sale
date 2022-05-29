@@ -1,0 +1,5 @@
+$('#sales-unit-form-container').find(".modal-content").html("<%= escape_javascript(render partial: 'shared/product_sales_unit/unit_form', locals: {action: 'create'} )%>");
+$("#sales-unit-form-container").modal('show');
+$(".close").click(function(){
+  $("#sales-unit-form-container").modal('hide');
+});

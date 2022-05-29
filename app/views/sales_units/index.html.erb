@@ -1,0 +1,15 @@
+<%= render partial: 'shared/page_header', locals: {title: 'Sales Units'}%>
+
+<div class='d-flex justify-content-end mx-3 mt-3'>
+  <%= link_to '<i class="bi bi-plus-lg"></i> Add Unit'.html_safe, new_sales_unit_path, remote: true, class: 'btn btn-success'%>
+</div>
+
+<div class='categories-list'>
+  <%= render partial: 'shared/sales_unit/sales_unit', collection: @sales_units%>
+</div>
+
+<div id="new-sales_unit-modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content"></div>
+  </div>
+</div>

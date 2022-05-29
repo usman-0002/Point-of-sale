@@ -1,0 +1,32 @@
+<%= render partial: 'shared/page_header', locals: {title: 'Product Details'}%>
+
+<div class='d-flex m-5 justify-content-arround'>
+  <div class="w-100 card  border-danger">
+    <div class="card-header text-center">
+      <strong><%= @product.code%></strong>
+    </div>
+    <%= image_tag @product.avatar_url, class: "card-img-top"%>
+    <div class="card-body">
+      <h5 class="card-title"><%= @product.name%></h5>
+      <p class="card-text"><%= @product.description%></p>
+      <p class="card-text"><strong>Stock: </strong><%= @product.quantity%></p>
+      <p class="card-text"><strong>Supplier: </strong><%= @product.supplier&.supplier_detail&.full_name || 'No info of supplier'%></p>
+      <p class="card-text"><strong>Category: </strong><%= @product.category&.name || 'Others'%></p>
+    </div>
+    <div class='card-footer'>
+      <%= link_to '<i class="bi bi-pencil-square"></i> Edit'.html_safe, edit_product_path(@product), class: 'btn m-1 btn-info'%>
+      <%= link_to '<i class="bi bi-trash3"></i> Delete'.html_safe, product_path(@product), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn m-1 btn-danger'%>
+      <%= link_to '+ Add Sale Unit', new_product_product_sales_unit_path(@product), remote: true, class: 'btn btn-primary float-end'%>
+    </div>
+  </div>
+
+  <div class='w-100 ms-2'>
+    <%= render partial: 'shared/product_sales_unit/unit', collection: @product.product_sales_units%>
+  </div>
+</div>
+
+<div id="sales-unit-form-container" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content"></div>
+  </div>
+</div>
