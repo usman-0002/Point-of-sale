@@ -11,10 +11,9 @@ class Product < ApplicationRecord
   default_scope ->{ order(created_at: :desc) }
   scope :code_filter, ->(search) { where('code ILIKE ?', "%#{search}%") }
   scope :name_filter, ->(search) { where('name ILIKE ?', "%#{search}%") }
-  scope :des_filter, ->(search) { where('description ILIKE ?', "%#{search}%") }
 
   def self.filter(params)
-    code_filter(params).or(name_filter(params)).or(des_filter(params))
+    code_filter(params).or(name_filter(params))
   end
 
   def avatar_url

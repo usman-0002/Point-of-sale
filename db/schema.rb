@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_27_031810) do
+ActiveRecord::Schema.define(version: 2022_06_04_152945) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pg_trgm"
   enable_extension "plpgsql"
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -76,6 +77,8 @@ ActiveRecord::Schema.define(version: 2022_05_27_031810) do
     t.datetime "updated_at", null: false
     t.bigint "supplier_id"
     t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["code"], name: "code_gin_index_on_products", opclass: :gin_trgm_ops, using: :gin
+    t.index ["name"], name: "name_gin_index_on_products", opclass: :gin_trgm_ops, using: :gin
     t.index ["supplier_id"], name: "index_products_on_supplier_id"
   end
 
@@ -105,6 +108,8 @@ ActiveRecord::Schema.define(version: 2022_05_27_031810) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["detailable_type", "detailable_id"], name: "index_user_details_on_detailable_type_and_detailable_id"
+    t.index ["first_name"], name: "first_name_gin_index_on_user_details", opclass: :gin_trgm_ops, using: :gin
+    t.index ["last_name"], name: "last_name_gin_index_on_user_details", opclass: :gin_trgm_ops, using: :gin
   end
 
   create_table "users", id: :serial, force: :cascade do |t|
