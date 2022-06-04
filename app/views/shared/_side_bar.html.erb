@@ -25,9 +25,10 @@
           <i class="bi bi-basket2-fill icon-style"></i>Items
           <i class="bi bi-caret-down-fill"></i>
         </a>
-        <div class="sidebar-submenu-container" display_items_submenu = "<%= hide_products_submenu(controller.controller_name) %>">
+        <div class="sidebar-submenu-container" display_items_submenu = "<%= hide_items_submenu(controller.controller_name) %>">
           <%= link_to 'Products', products_path, class: "nav-link link-dark #{'active' if controller.controller_name == 'products'}" %>
           <%= link_to 'Categories', categories_path, class: "nav-link link-dark #{'active' if controller.controller_name == 'categories'}" %>
+          <%= link_to 'Sales Units', sales_units_path, class: "nav-link link-dark #{'active' if controller.controller_name == 'sales_units'}" %>
         </div>
       </li>
       <li>

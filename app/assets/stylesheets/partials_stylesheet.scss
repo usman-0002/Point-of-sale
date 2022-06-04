@@ -24,7 +24,7 @@ li {
 }
 
 .icon-style {
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin: 1rem 0.5rem 1rem 0;
 }
 
@@ -106,80 +106,27 @@ div[display_parties_submenu = false] {
   margin-left: 1vw;
 }
 
-.new-product-form {
-  input:focus {
-    box-shadow: none;
-  }
-  .product-category-select {
-    select {
-      display: block;
-      width: 100%;
-      padding: 0.375rem 2.25rem 0.375rem 0.75rem;
-      -moz-padding-start: calc(0.75rem - 3px);
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.5;
-      color: #212529;
-      background-color: #fff;
-      background-position: right 0.75rem center;
-      background-size: 16px 12px;
-      border: 1px solid #ced4da;
-      border-radius: 0.25rem 0 0 0.25rem;
-      transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-    }
-
-    .new-category {
-      text-decoration: none;
-      -webkit-text-stroke-width: thick;
-      color: black;
-      background: darkgray;
-      padding: 5px 10px;
-      border-radius: 0 5px 5px 0;
-    }
-
-    select:focus {
-      outline: none;
-      border-color: #86b7fe;
-    }
-  }
+select {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+  -moz-padding-start: calc(0.75rem - 3px);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem 0 0 0.25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
-.product-body {
-  background: white;
-  border-radius: 5px;
-  margin-bottom: 7px;
-  box-shadow: 0 0 2px 0 #858484;
+select:focus {
+  outline: none;
 }
 
-.product-body > div {
-  padding: 10px;
-}
-
-.product-expand {
-  background: white;
-  margin-bottom: 7px;
-  padding: 1rem;
-  border-radius: 5px;
-  border: 1px solid $primary-dark-color;
-}
-
-.product-body:hover {
-  background-color: $primary-light-color;
-}
-
-#cros-expand > i:hover {
-  background-color: rgb(189, 184, 184);
-  color: white;
-  padding-left: 3px;
-  padding-right: 3px;
-  border-radius: 5px;
-}
-
-.product-img {
-  border-radius: 2px;
-  width: 5vw;
-  height: 5vh;
-}

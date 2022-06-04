@@ -1,0 +1,5 @@
+$("#new-sales_unit-modal-window").find(".modal-content").html("<%= escape_javascript(render partial: 'shared/sales_unit/new_sales_unit', locals: {action: 'update'} )%>");
+$("#new-sales_unit-modal-window").modal('show');
+$(".close").click(function(){
+  $("#new-sales_unit-modal-window").modal('hide');
+});

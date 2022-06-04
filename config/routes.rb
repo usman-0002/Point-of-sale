@@ -11,10 +11,11 @@ Rails.application.routes.draw do
 
   resources :categories
 
-  resources :products, except: :edit do
+  resources :products do
     collection do
       post :search
     end
+    resources :product_sales_units, shallow: true, except: %i[index show]
   end
 
   resources :customers do
@@ -34,6 +35,8 @@ Rails.application.routes.draw do
       post :search
     end
   end
+
+  resources :sales_units, except: :show
 
   post '/new-category', action: :create_new_category, controller: 'products', as: 'new_product_category'
 end

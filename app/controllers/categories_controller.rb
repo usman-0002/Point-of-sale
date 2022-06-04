@@ -6,38 +6,37 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
-    respond_to do |format|
-      format.js
-      format.html
-    end
+    respond_to_js
   end
 
   def create
     @category = Category.new(category_params)
     if @category.save
-      redirect_to categories_path, notice: 'Category added Successfully!'
+      flash[:notice] = 'Category added Successfully!'
     else
-      flash.now[:alert] = @category.errors.full_messages
-      render :new
+      flash[:alert] = @category.errors.full_messages
     end
+    redirect_to categories_path
   end
 
-  def edit; end
+  def edit
+    respond_to_js
+  end
 
   def update
     if @category.update(category_params)
-      redirect_to categories_path, notice: 'Category updated Successfully!'
+      flash[:notice] = 'Category updated Successfully!'
     else
-      flash.now[:alert] = @category.errors.full_messages
-      render :new
+      flash[:alert] = @category.errors.full_messages
     end
+    redirect_to categories_path
   end
 
   def destroy
     if @category.destroy
       flash[:notice] = 'Category deleted Successfully!'
     else
-      flash[:alert] = 'Unable to delete this Category!'
+      flash[:alert] = @category.errors.full_messages
     end
     redirect_to categories_path
   end
@@ -50,5 +49,11 @@ class CategoriesController < ApplicationController
 
   def category_params
     params.require(:category).permit!
+  end
+
+  def respond_to_js
+    respond_to do |format|
+      format.js
+    end
   end
 end

@@ -1,0 +1,35 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="myModalLabel"><%="#{form_submit_btn_text(action)} Product Sales Unit"%></h4>
+  <button type="button" class="close btn btn-light" data-dismiss="modal">X</button>
+</div>
+<%= form_for(@product_sales_unit, url: {action: action }) do |f| %>
+  <div class="modal-body">
+    <div class='d-flex'>
+      <div class='w-100 mb-3'>
+        <%= f.label :sales_unit %>
+        <%= f.collection_select :sales_unit_id, @sales_units, :id, :name%>
+      </div>
+      <div class='w-100 mb-3 ms-1'>
+        <%= f.label :unit_price %>
+        <%= f.number_field :unit_price, placeholder: 'Enter Unit Price', class: 'form-control', required: true %>
+      </div>
+    </div>
+    <div class='d-flex'>
+      <div class='w-100 mb-3'>
+        <%= f.label :order_availability %>
+        <%= f.select :order_availability, ProductSalesUnit.order_availabilities.keys, class: 'form-control'%>
+      </div>
+      <div class='w-100 mb-3 ms-1'>
+        <%= f.label :quantity %>
+        <%= f.number_field :quantity, placeholder: 'Enter Unit Quantity', class: 'form-control', required: true %>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <div class='d-flex'>
+      <div class='w-100 text-center'>
+        <%= f.submit "#{form_submit_btn_text(action)} Unit", class: 'btn btn-success'%>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -2,11 +2,13 @@
 .search-form {
   display: inline-flex;
   width: 100% !important;
+
   .search-input {
     border: 1px solid $primary-dark-color;
     padding: 1vh 3vw;
     width: 100%;
   }
+  
   .search-input:focus {
     outline: none;
   }
@@ -18,4 +20,50 @@
 
 .products-listing {
   padding: 0 30px;
+
+  .product-body {
+    background: white;
+    border-radius: 5px;
+    margin-bottom: 7px;
+    box-shadow: 0 0 2px 0 #858484;
+    
+  }
+  
+  .product-body > div {
+    padding: 10px;
+  }
+
+  .product-body:hover {
+    background-color: $primary-light-color;
+  }
+  
+  .product-img {
+    border-radius: 2px;
+    width: 5vw;
+    height: 5vh;
+  }
+}
+
+.new-product-form {
+
+  input:focus {
+    box-shadow: none;
+  }
+
+  .product-category-select {
+
+    .new-category {
+      text-decoration: none;
+      -webkit-text-stroke-width: thick;
+      color: black;
+      background: darkgray;
+      padding: 5px 10px;
+      border-radius: 0 5px 5px 0;
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #86b7fe;
+    }
+  }
 }

@@ -21,7 +21,6 @@
 
 $(document).on('turbolinks:load', function() {
   sidebar_submenu_onclick();
-  products_listing_onclick();
 })
 
 const sidebar_submenu_onclick = () => { 
@@ -39,22 +38,3 @@ const sidebar_submenu_onclick = () => {
     });
   }
 };
-
-const products_listing_onclick = () => {
-  $('.product-body, #cros-expand').click(function(e) {
-    if ($(this).hasClass('product-body')) {
-      $( ".product-expand" ).each(function() {
-        if (!$(this).hasClass('d-none')) {
-          $(this).addClass('d-none');
-          $(this).prev().removeClass('d-none');
-        }
-      });
-      $(this).addClass('d-none');
-      $(this).next().removeClass('d-none');
-    }
-    else {
-      $(this).parent().addClass('d-none');
-      $(this).parent().prev().removeClass('d-none');
-    }
-  });
-}
