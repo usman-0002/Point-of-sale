@@ -44,6 +44,7 @@ li {
   .bi-caret-down-fill {
     font-size: 1rem;
     float: right;
+    margin-top: 0.5rem;
   }
 }
 
@@ -88,6 +89,8 @@ div[display_parties_submenu = false] {
 }
 
 .page-header {
+  background-color: $primary-light-color;
+  box-shadow: rgba(230, 227, 227, 0.463) 0px -50px 36px -28px inset;
   width: 100%;
   padding: 15px;
   background: $primary-dark-color;
@@ -129,4 +132,3 @@ select {
 select:focus {
   outline: none;
 }
-

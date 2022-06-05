@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   authenticated :user do
-    root 'home#index', as: :authenticated_root
+    root 'dashboard#dashboard', as: :authenticated_root
   end
 
   devise_scope :user do
@@ -37,7 +37,9 @@ Rails.application.routes.draw do
   end
 
   resources :sales_units, except: :show
+  resources :sales
 
   post '/new-category', action: :create_new_category, controller: 'products', as: 'new_product_category'
   match '/404', to: 'errors#not_found', via: :all
+  post '/items/search', to: 'sales#search', as: 'items_search'
 end

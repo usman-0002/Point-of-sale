@@ -1,0 +1,6 @@
+<%= render partial: 'shared/sale/item', collection: @product_sales_units%>
+
+<div class='d-flex justify-content-center mt-2 pagination'>
+  <strong>Total Items: <%= @pagy.count%></strong>
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>

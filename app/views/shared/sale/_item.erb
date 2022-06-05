@@ -1,0 +1,7 @@
+<div class='list-item'>
+  <strong class='item-name'><%= item.product.name %></strong>
+  <div><%= item.sales_unit.name %></div>
+  <div class='price'>Price: <%= item.unit_price %></div>
+  <%= stock_color(item.quantity) %>
+  <div class='code'><%= item.product.code %></div>
+</div>

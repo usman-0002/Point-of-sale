@@ -1,0 +1,47 @@
+<%= render partial: 'shared/page_header', locals: {title: "New Sale"}%>
+
+<div class='sales'>
+  <div class='d-flex'>
+    <div class='w-100 items-list'>
+      <%= form_with url: items_search_path, local: false,  method: :post do |form|%>
+        <div class = 'items-search-form'>
+          <%= form.search_field :search, placeholder: 'Search by Code, Name', class: 'search-input',autofocus: true, oninput: "this.form.requestSubmit()" %>
+        </div>
+      <% end %>
+      <div id='search-changed'><%= render partial: 'shared/sale/items_list'%></div>
+    </div>
+    <div class='w-100 receipt'>
+      <%= render partial: 'shared/sale/receipt'%>
+    </div>
+  </div>
+
+  <div class='d-flex receipt-btns'>
+    <div class='w-100 comment-box'>
+      Add Comments
+    </div>
+    <div class='d-flex w-100 bill-adjustment'>
+      <div class='w-100 adjustment-box'>
+        <div class='title'>Adjustment</div>
+        <div class='adjustment-btns'>
+          <%= link_to '%', new_product_path, class: 'adjust-percent'%>
+          <%= link_to 'Value', new_product_path, class: 'adjust-value'%>
+          <%= link_to '+/-', new_product_path, class: 'adjust-symbol'%>
+          <%= number_field_tag 'adjustment', '0', step: 2 %>
+        </div>
+      </div>
+      <div class='w-100 total-box'>
+        <div class='title'>NET TOTAL</div>
+        <div class='amount'>0</div>
+      </div>
+    </div>
+  </div>
+
+  <div class='d-flex justify-content-end cash-btns'>
+    <%= link_to '<i class="bi bi-plus"></i> HOLD'.html_safe, product_path('-3'), class: 'btn btn-success hold-btn'%>
+    <%= link_to 'CANCEL', product_path('-3'), class: 'btn btn-primary'%>
+    <%= link_to '<i class="bi bi-cash-coin"></i> PAYMENT'.html_safe, product_path('-3'), class: 'btn btn-success'%>
+  </div>
+</div>
+
+
+

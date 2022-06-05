@@ -1,0 +1,10 @@
+<%= render partial: 'shared/page_header', locals: {title: 'Dashboard'}%>
+
+<div class='d-flex justify-content-center dashboard-items'>
+  <%= render partial: 'shared/dashboard/item_btn', locals: {title: 'Add Product', icon: 'bi bi-patch-plus-fill', url: '/products/new'}%>
+  <%= render partial: 'shared/dashboard/item_btn', locals: {title: 'Make a Sale', icon: 'bi bi-cart4', url: '/sales/new'}%>
+</div>
+
+<div class='d-flex justify-content-center dashboard-items'>
+  <%= render partial: 'shared/dashboard/items_list'%>
+</div>
