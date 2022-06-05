@@ -1,15 +1,12 @@
 class ProductsController < ApplicationController
   before_action :find_product, only: %i[show edit update destroy]
+  before_action :find_categories_and_supplier, only: %i[index new create edit search]
   def index
     @pagy, @products = pagy(Product.includes(:category))
-    @categories = Category.all
-    @suppliers = Supplier.all
   end
 
   def new
     @product = Product.new
-    @categories = Category.all
-    @suppliers = Supplier.all
   end
 
   def show; end
@@ -24,10 +21,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  def edit
-    @categories = Category.all
-    @suppliers = Supplier.all
-  end
+  def edit; end
 
   def update
     if @product.update(product_params)
@@ -49,8 +43,6 @@ class ProductsController < ApplicationController
   def search
     search_params = params.permit(:search)['search'].strip
     @pagy, @products = pagy(Product.filter(search_params))
-    @categories = Category.all
-    @suppliers = Supplier.all
     respond_to_js
   end
 
@@ -69,6 +61,11 @@ class ProductsController < ApplicationController
 
   def find_product
     @product = Product.find(params[:id])
+  end
+
+  def find_categories_and_supplier
+    @categories = Category.all
+    @suppliers = Supplier.all
   end
 
   def product_params
